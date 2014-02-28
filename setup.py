@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 """
-Setup script for Foobar.
+Setup script for NewPyProj.
 """
 
 import setuptools
 
-from foobar import __project__, __version__
+from npp import __project__, __version__
 
 import os
 if os.path.exists('README.rst'):
@@ -20,8 +20,8 @@ setuptools.setup(
     name=__project__,
     version=__version__,
 
-    description="Foobar is a Python 3 package template.",
-    url='http://pypi.python.org/pypi/Foobar',
+    description="NewPyProj is a Python 3 package template.",
+    url='http://pypi.python.org/pypi/NewPyProj',
     author='Jace Browning',
     author_email='jacebrowning@gmail.com',
 

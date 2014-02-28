@@ -1,5 +1,5 @@
-PROJECT := Foobar
-PACKAGE := foobar
+PROJECT := NewPyProj
+PACKAGE := npp
 SOURCES := Makefile setup.py $(shell find $(PACKAGE) -name '*.py')
 
 ENV := env
