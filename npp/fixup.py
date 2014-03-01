@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+""" Fixup functions to convert the foobar template into specified project. """
+
 import os
 import re
 import shutil
@@ -8,6 +10,7 @@ from subprocess import CalledProcessError
 
 
 def fixup_project(project):
+    """ Fixup project level items, i.e. Foobar --> NewPyProj. """
     proj_root = os.path.join(os.getcwd(), project)
     for root, dirs, files in os.walk(proj_root):
         dirs[:] = [d for d in dirs if d not in ['.git']]
@@ -23,6 +26,7 @@ def fixup_project(project):
 
 
 def fixup_package(project, package):
+    """ Fixup package level items, i.e. foobar --> npp. """
     project_root = os.path.join(os.getcwd(), project)
     package_root = os.path.join(project_root, package)
     old_pack_root = os.path.join(project_root, 'foobar')
@@ -42,4 +46,5 @@ def fixup_package(project, package):
 
 
 def fixup_extras(project, package, github):
+    """ Fixup any additional items e.g. Author name and email. """
     pass
