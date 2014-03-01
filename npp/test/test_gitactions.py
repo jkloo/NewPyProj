@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import Mock, patch
 from subprocess import CalledProcessError
 
-from npp.gitactions import get_git_username, get_git_email, add_repo_remote
+from npp.gitactions import get_git_username, get_git_email, add_repo_remote, set_repo_remote
 from npp.gitactions import git_pull_from_remote, git_fetch_from_remote
 from npp.gitactions import git_merge_from_remote, init_git_repo
 

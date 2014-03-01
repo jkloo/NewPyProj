@@ -56,8 +56,8 @@ def set_repo_remote(remote, url):
 
 
 def git_pull_from_remote(remote, branch='master'):
-    if _git_fetch_from_remote(remote):
-        return _git_merge_from_remote(remote, branch)
+    if git_fetch_from_remote(remote):
+        return git_merge_from_remote(remote, branch)
     else:
         return False
 
