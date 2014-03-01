@@ -62,7 +62,7 @@ def git_pull_from_remote(remote, branch='master'):
         return False
 
 
-def git_fetch_from_remote(remote):    
+def git_fetch_from_remote(remote):
     cmd = 'git fetch {}'.format(remote)
     try:
         p = subprocess.check_call(cmd.split())

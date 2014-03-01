@@ -65,7 +65,7 @@ class TestSetRepoRemote(unittest.TestCase):
 class TestGitPullFromRemote(unittest.TestCase):
     @patch('npp.gitactions.git_fetch_from_remote', Mock(return_value=True))
     @patch('npp.gitactions.git_merge_from_remote', Mock(return_value=True))
-    @patch('subprocess.check_call', Mock(return_value='some message about remote added'))    
+    @patch('subprocess.check_call', Mock(return_value='some message about remote added'))
     def test__git_pull_from_remote__success(self):
         self.assertTrue(git_pull_from_remote('testing', 'https://testurl.com/repo.git'))
 
@@ -81,7 +81,7 @@ class TestGitPullFromRemote(unittest.TestCase):
 
 
 class TestGitFetchFromRemote(unittest.TestCase):
-    @patch('subprocess.check_call', Mock(return_value='some message about remote added'))    
+    @patch('subprocess.check_call', Mock(return_value='some message about remote added'))
     def test__git_fetch_from_remote__success(self):
         self.assertTrue(git_fetch_from_remote('testing'))
 
@@ -91,11 +91,10 @@ class TestGitFetchFromRemote(unittest.TestCase):
 
 
 class TestGitMergeFromRemote(unittest.TestCase):
-    @patch('subprocess.check_call', Mock(return_value='some message about remote added'))    
+    @patch('subprocess.check_call', Mock(return_value='some message about remote added'))
     def test__git_merge_from_remote__success(self):
         self.assertTrue(git_merge_from_remote('testing', 'https://testurl.com/repo.git'))
 
     @patch('subprocess.check_call', Mock(side_effect=CalledProcessError('', '')))
     def test__git_merge_from_remote__failure_merge(self):
         self.assertFalse(git_merge_from_remote('testing', 'https://testurl.com/repo.git'))
-

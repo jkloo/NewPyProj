@@ -22,7 +22,6 @@ def fixup_project(project):
                 g.write(re.sub('Foobar', project, t))
 
 
-
 def fixup_package(project, package):
     project_root = os.path.join(os.getcwd(), project)
     package_root = os.path.join(project_root, package)
