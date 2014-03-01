@@ -28,6 +28,9 @@ def main(args=None):
         if not git_pull_from_remote('template'):
             set_repo_remote('template', TEMPLATE_URL)
             git_pull_from_remote('template')
+    else:
+        add_repo_remote('template', TEMPLATE_URL)
+        git_pull_from_remote('template')
 
     os.chdir(tmp)
     fixup_project(args.project)
@@ -35,5 +38,5 @@ def main(args=None):
     fixup_extras(args.project, args.package, args.github)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     main()
