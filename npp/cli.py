@@ -9,6 +9,7 @@ from npp.gitactions import init_git_repo, add_repo_remote, git_pull_from_remote,
 
 
 def _generate_args(args):
+    """ Parse the passed in args and return the corresponding namespace. """
     parser = argparse.ArgumentParser()
     parser.add_argument('project', help='The name of the new project you want to start.')
     parser.add_argument('package', help='The name of the package you are developing.')
@@ -17,6 +18,7 @@ def _generate_args(args):
 
 
 def main(args=None):
+    """ The entry point for the npp tool. """
     args = _generate_args(args)
     os.mkdir(args.project)
     tmp = os.getcwd()
